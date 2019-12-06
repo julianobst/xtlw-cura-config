@@ -9,7 +9,7 @@
         "category": "Other",
         "file_formats": "text/x-gcode",
         "platform": "xtlw6_platform.stl",
-        "hsa_material": true,
+        "has_material": true,
         "has_machine_quality": true,
         "has_variants": true,
         "preferred_variant_name": "0.4 mm",
