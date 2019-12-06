@@ -1,0 +1,148 @@
+{
+    "version": 2,
+    "name": "XTLW 6 Duplication Mode ",
+    "inherits": "fdmprinter",
+    "metadata": {
+        "visible": true,
+        "author": "XTLW3D",
+        "manufacturer": "XTLW3D",
+        "category": "Other",
+        "file_formats": "text/x-gcode",
+        "hsa_material": true,
+        "has_machine_quality": true,
+        "has_variants": true,
+        "preferred_variant_name": "0.4 mm",
+        "exclude_materials": ["generic_hips", "generic_petg", "generic_bam", "ultimaker_bam", "generic_pva", "ultimaker_pva", "generic_tough_pla", "ultimaker_tough_pla_black", "ultimaker_tough_pla_green", "ultimaker_tough_pla_red", "ultimaker_tough_pla_white"],
+        "machine_extruder_trains":
+        {
+            "0": "xtlw3D_6_dm_extruder"
+        }
+    },
+
+    "overrides": {
+        "machine_name": { "default_value": "XTLW 6 Duplication Mode " },
+        "machine_width": {
+            "default_value": 158.5
+        },
+        "machine_height": {
+            "default_value": 290
+        },
+        "machine_depth": {
+            "default_value": 310
+        },
+        "machine_center_is_zero": {
+            "default_value": false
+        },
+        "machine_heated_bed": {
+            "default_value": true
+        },
+        "machine_nozzle_size": {
+            "default_value": 0.4
+        },
+        "machine_show_variants": {
+            "default_value": true
+        },
+        "machine_acceleration": {
+            "default_value": 2000
+        },
+        "machine_max_feedrate_x": {
+            "default_value": 150
+        },
+        "machine_max_feedrate_y": {
+            "default_value": 150
+        },
+        "machine_max_feedrate_z": {
+            "default_value": 15
+        },
+        "machine_max_feedrate_e": {
+            "default_value": 150
+        },
+        "machine_disallowed_areas": {
+            "default_value": [
+                [[ -75.75,  -155], [ -79.25,  -155], [ -79.25,  155], [ -75.75,  155]]
+            ]
+        },
+        "line_width": { "value": "machine_nozzle_size"},
+        "speed_travel": { "value": "100" },
+        "speed_layer_0": { "value": "20" },
+        "speed_prime_tower": { "value": "speed_topbottom" },
+        "speed_print": { "value": "50" },
+        "speed_support": { "value": "speed_wall_0" },
+        "speed_support_interface": { "value": "speed_topbottom" },
+        "speed_topbottom": { "value": "math.ceil(speed_print * 17 / 35)" },
+        "speed_wall": { "value": "math.ceil(speed_print * 25 / 40)" },
+        "speed_wall_0": { "value": "math.ceil(speed_wall * 20 / 35)" },
+        "speed_wall_x": { "value": "speed_wall" },
+        "acceleration_enabled": { "default_value": true },
+		"acceleration_print": { "value": "1000" },
+		"acceleration_travel": { "value": "2000" },
+        "acceleration_layer_0": { "value": "acceleration_topbottom" },
+        "acceleration_prime_tower": { "value": "math.ceil(acceleration_print * 2000 / 4000)" },
+        "acceleration_support": { "value": "math.ceil(acceleration_print * 2000 / 4000)" },
+        "acceleration_support_interface": { "value": "acceleration_topbottom" },
+        "acceleration_topbottom": { "value": "math.ceil(acceleration_print * 800 / 4000)" },
+        "acceleration_wall": { "value": "math.ceil(acceleration_print * 1600 / 4000)" },
+        "acceleration_wall_0": { "value": "math.ceil(acceleration_wall * 500 / 1000)" },
+		"jerk_enabled": { "default_value": true },
+		"jerk_print": { "value": "10" },
+		"jerk_travel": { "value": "15" },
+        "jerk_layer_0": { "value": "jerk_topbottom" },
+        "jerk_prime_tower": { "value": "math.ceil(jerk_print * 15 / 25)" },
+        "jerk_support": { "value": "math.ceil(jerk_print * 15 / 25)" },
+        "jerk_support_interface": { "value": "jerk_topbottom" },
+        "jerk_topbottom": { "value": "math.ceil(jerk_print * 10 / 25)" },
+        "jerk_wall": { "value": "math.ceil(jerk_print * 15 / 25)" },
+        "jerk_wall_0": { "value": "math.ceil(jerk_wall * 6 / 10)" },
+		"jerk_travel_layer_0": { "value": "math.ceil(jerk_layer_0 * jerk_travel / jerk_print)" },
+        "material_diameter": {
+            "default_value": 1.75
+        },
+        "retraction_amount": {
+            "default_value": 6.5
+        },
+        "retraction_speed": {
+            "default_value": 30
+        },
+        "adhesion_type": {
+            "default_value": "skirt"
+        },
+        "start_layers_at_same_position":
+        {
+            "enabled": true,
+            "value": false
+        },
+        "layer_start_x":
+        {
+            "enabled": "start_layers_at_same_position",
+            "value": "machine_width/2"
+        },
+        "layer_start_y":
+        {
+            "enabled": "start_layers_at_same_position",
+            "value": "machine_depth"
+        },
+        "retraction_hop_enabled": { "value": false },
+        "retraction_hop_only_when_collides":
+        {
+            "enabled": true,
+            "value": false
+        },
+        "retraction_hop": { "value": "layer_height" },
+        "support_angle": { "value": "60" },
+        "support_pattern": { "value": "'triangles'" },
+        "support_use_towers": { "value": "False" },
+        "support_z_distance": { "value": "0.1" },
+        "machine_gcode_flavor": {
+            "default_value": "RepRap (Marlin/Sprinter)"
+        },
+        "machine_start_gcode": {
+            "default_value": "M605 S2 R0 X155\nG21\nG90\nM82\nM107\nM104 S{material_print_temperature}\nM105\nM109 S{material_print_temperature}\nG28 Z0\nG1 Z15 F150\nG28 Y0\nG1 Y20 F6000\nG28 X0\nG1 X80 F9000\nT0\nG92 E0\nG1 E35 F250\nG1 E45 F120\nG92 E0\nG1 X100 Z0 F5000\nG1 X145 F9000\nM117\n"
+        },
+        "machine_end_gcode": {
+            "default_value": "G91\nG1 Z+0.5 E-16 Y+10 F9000\nG90\nM107\nM107 P1\nM104 S0\nM140 S0\nM117\nM605 S0\nG28 X0 Y0\nM84"
+        },
+        "machine_extruder_count": {
+          "default_value": 1
+        }
+    }
+}
