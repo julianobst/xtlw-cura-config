@@ -87,19 +87,14 @@
         "adhesion_type": {
             "default_value": "skirt"
         },
-        "start_layers_at_same_position":
-        {
-            "enabled": true,
-            "value": false
-        },
         "layer_start_x":
         {
-            "enabled": "start_layers_at_same_position",
+            "enabled": false,
             "value": "machine_width/2"
         },
         "layer_start_y":
         {
-            "enabled": "start_layers_at_same_position",
+            "enabled": false,
             "value": "machine_depth"
         },
         "retraction_hop_enabled": { "value": false },
