@@ -103,25 +103,25 @@
             "default_value": 1.75
         },
         "retraction_amount": {
-            "default_value": 6.5
+            "default_value": 6.0
         },
         "retraction_speed": {
-            "default_value": 30
+            "default_value": 40
         },
         "switch_extruder_retraction_amount": {
 		    "default_value": 16,
 			"enabled": true
         },
 		"switch_extruder_retraction_speeds": {
-		    "default_value": 30,
+		    "default_value": 40,
 			"enabled": true
         },
 		"switch_extruder_retraction_speed": {
-		    "default_value": 30,
+		    "default_value": 40,
 			"enabled": true
         },
 		"switch_extruder_prime_speed": {
-		    "default_value": 30,
+		    "default_value": 40,
 			"enabled": true
         },
         "adhesion_type": {
